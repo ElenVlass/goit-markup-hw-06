@@ -601,6 +601,13 @@ link {
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
 }
+.subscribe-input:-webkit-autofill,
+.subscribe-input:-webkit-autofill:hover,
+.subscribe-input:-webkit-autofill:focus {
+  border: 1px solid #69696b;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.6);
+  -webkit-box-shadow: 0 0 0px 1000px var(--dark-bgd-color) inset;
+}
 .subscribe-button {
   display: flex;
   align-items: center;
