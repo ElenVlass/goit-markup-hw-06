@@ -831,7 +831,7 @@ link {
 .form-icon {
   display: inline-block;
   position: absolute;
-  top: 24px;
+  top: 28px;
   left: 15px;
   width: 18px;
   height: 18px;
@@ -850,10 +850,19 @@ link {
   resize: none;
   overflow: auto;
   margin-bottom: 20px;
+  padding: 12px 16px;
 }
-
-.submit-label {
-  display: inline-block;
+.textarea::placeholder {
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+.checkbox-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
 }
 .checkbox {
   -webkit-appearance: none;
@@ -866,23 +875,53 @@ link {
   display: inline-block;
   width: 16px;
   height: 15px;
-  background: var(--accent-color);
+  background: var(--hero-title-color);
+  /* fill: var(--hero-title-color); */
+  border: 2px solid var(--title-text-color);
   border-radius: 2px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .checkbox:checked + .icon-check {
-  background: var(--accent-color);
-  fill: var(--filter-bg-color);
+  background-color: var(--accent-color);
+  fill: var(--hero-title-color);
+  border-color: var(--accent-color);
+  background-image: url(../images/check.svg);
+  background-size: contain;
+  background-origin: border-box;
+}
+.submit-label {
+  display: block;
+  margin-left: 7px;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+}
+.submit-link {
+  color: var(--accent-color);
 }
 .submit-button {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
   width: 200px;
   height: 50px;
-  background: var(--accent-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
   font-weight: bold;
   font-size: 16px;
   line-height: 1.87;
   text-align: center;
   letter-spacing: 0.06em;
   color: var(--hero-title-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border-style: none;
+  /* transition: color 250ms var(--timing-function),
+    background-color 250ms var(--timing-function); */
 }
+/* .submit-button:hover,
+.submit-button:focus {
+  color: var(--accent-color);
+  background-color: var(--hero-title-color);
+} */
