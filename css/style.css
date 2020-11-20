@@ -801,7 +801,9 @@ link {
   margin-left: auto;
   background: #ffffff;
 }
-
+.form:focus-within .form-title {
+  color: var(--accent-color);
+}
 .form-title {
   margin-bottom: 12px;
   font-size: 20px;
@@ -852,6 +854,13 @@ link {
 .form-input:hover + .form-icon {
   fill: var(--accent-color);
 }
+.form-input:not(:placeholder-shown):valid {
+  border-color: green;
+}
+.form-input:not(:placeholder-shown):invalid {
+  border-color: red;
+}
+
 .form-input.textarea {
   height: 120px;
   resize: none;

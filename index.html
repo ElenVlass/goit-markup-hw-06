@@ -270,7 +270,7 @@
     </footer>
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <button class="btn-close" data-modal-close><svg width="11" height="11">
+        <button class="btn-close" data-modal-close tabindex="8"><svg width="11" height="11">
           <use href="./images/sprite-forms.svg#close"></use>
         </svg></button>
 
@@ -278,30 +278,29 @@
         <h2 class="form-title">Оставьте свои данные, мы вам перезвоним</h2>
 
           <label class="form-label">Имя
-          <input class="form-input" type="text" name="name" pattern="^[А-Яа-яЁё\s]+$">
+          <input class="form-input" type="text" name="name" pattern="^[А-Яа-яЁё\s]+$" placeholder=" " tabindex="1">
           <svg class="form-icon">
              <use href="./images/sprite.svg#person"></use>
         </svg> </label>
       
        <label class="form-label">Телефон
-          <input class="form-input" type="tel" name="tel">
+          <input class="form-input" type="tel" name="tel" pattern="^[ 0-9]+$" placeholder=" "tabindex="2">
                   <svg class="form-icon">
                     <use href="./images/sprite.svg#phone"></use></svg></label>
   
        <label class="form-label">Почта
-         <input class="form-input" type="email" name="email"><svg class="form-icon">
+         <input class="form-input" type="email" name="email" placeholder=" " tabindex="3"><svg class="form-icon">
           <use href="./images/sprite.svg#e-mail"></use></svg></label>
       
           <label class="form-label">Комментарий
-          <textarea class="form-input textarea" name="comment" placeholder="Введите текст"></textarea></label> 
+          <textarea class="form-input textarea" name="comment" placeholder="Введите текст" tabindex="4"></textarea></label> 
 
-     <label class="checkbox-submit">
-           <input class="checkbox" type="checkbox" value="term" name="policy">
+     <label class="checkbox-submit"  tabindex="5">
+           <input class="checkbox" type="checkbox" value="term" name="policy" >
           <span class="icon-check"></span>
-       <span class="submit-label">Соглашаюсь с рассылкой и принимаю <a class="submit-link" href="#">Условия договора</a></span>
+       <span class="submit-label">Соглашаюсь с рассылкой и принимаю <a class="submit-link" href="#" tabindex="6">Условия договора</a></span>
      </label>
-
-         <button class="submit-button" type="submit">Отправить</button>
+         <button class="submit-button" type="submit" tabindex="7">Отправить</button>
       </form>
       </div>
     </div>
