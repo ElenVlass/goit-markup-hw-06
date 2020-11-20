@@ -255,30 +255,59 @@
             <li class="join-item"><a class="join-link" href=""><svg class="social-icon"><use href="./images/sprite.svg#linkedin"></use></svg></a></li>
           </ul>
         </div>
+        <div class="subscribe-container">
+          <h3 class="subscribe-title">Подпишитесь на рассылку</h3>
+          <div class="subscribe-field">
+            <input class="subscribe-input" type="email" name="mail" placeholder="E-mail">
+            <button class="subscribe-button">Подписаться
+            <svg class="icon-send">
+              <use href="./images/sprite.svg#send"></use>
+            </svg></button>
+            
+          </div>
+        </div>
       </div>
     </footer>
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button class="btn-close" data-modal-close><svg width="11" height="11">
-          <use href="./images/sprite-modal.svg#close-modal"></use>
+          <use href="./images/sprite-forms.svg#close"></use>
         </svg></button>
-        <!-- <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
-        <form action="/signup" method="post">
-        <p><label class="modal-label">Имя</label>
-         <svg>
-           <use href="./images/sprite-modal.svg#person-modal"></use>
-         </svg> 
-         <input class="modal-item" type="text"></p>
-      <p>
-        <label class="modal-label">Телефон</label>
-        <input class="modal-item" type="text">
-      </p>
-        <p><label class="modal-label">Почта</label><input class="modal-item" type="text"></p>
-        <p><label class="modal-label">Комментарий</label><input class="modal-item" type="text" placeholder="Введите текст"></p>
-        <label><input class="contract-checkbox" type="checkbox" value="term"></label>
-        <p class="contract-label">Соглашаюсь с рассылкой и принимаю <a href="">Условия договора</a></p>
-        <button class="button-modal">Отправить</button>
-      </form> -->
+
+        <form class="js-speaker-form form">
+        <h2 class="form-title">Оставьте свои данные, мы вам перезвоним</h2>
+
+          <label class="form-label">Имя
+          <input class="form-input" type="text" name="name" pattern="^[А-Яа-яЁё\s]+$">
+          <svg class="form-icon">
+             <use href="./images/sprite.svg#person"></use>
+        </svg> </label>
+      
+       <label class="form-label">Телефон
+          <input class="form-input" type="tel" name="tel">
+                  <svg class="form-icon">
+                    <use href="./images/sprite.svg#phone"></use></svg></label>
+  
+     
+       <label class="form-label">Почта
+         <input class="form-input" type="email" name="email"><svg class="form-icon">
+          <use href="./images/sprite.svg#e-mail"></use></svg></label>
+      
+
+     
+          <label class="form-label" for="comment">Комментарий</label> 
+          <textarea class="form-input textarea" name="comment" id="comment" cols="30" rows="10" placeholder="Введите текст"></textarea>
+
+        
+            
+     <label>
+           <input class="checkbox" type="checkbox" value="term" name="policy">
+          <svg class="icon-check"><use href="./images/sprite.svg#check"></use></svg>
+       <span class="submit-label">Соглашаюсь с рассылкой и принимаю <a href="#">Условия договора</a></span>
+     </label>
+
+         <button class="submit-button" type="submit">Отправить</button>
+      </form>
       </div>
     </div>
     <script src="./js/modal.js"></script>
@@ -292,6 +321,15 @@
             );
           });
         })();
+        (() => {
+            document.querySelector('.js-speaker-form').addEventListener('submit', e => {
+              e.preventDefault();
+
+              new FormData(e.currentTarget).forEach((value, name) =>
+                console.log(`${name}: ${value}`),
+              );
+            });
+          })();
     </script>
   </body>
 </html>
